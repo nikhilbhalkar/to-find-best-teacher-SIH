@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Iuri Silva" />
+    <meta
+      name="description"
+      content="Meu nome é Iuri, desenvolvo interfaces modernas e de alta qualidade, concentrado em performance, animações, responsividade e SEO."
+    />
+    <meta
+      name="keywords"
+      content="sites, web, desenvolvimento, frontend, iuri silva, ui designer, programador, iuricode, front-end, designer, ui, iuri, freelancer, freela, website, portfólio"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#986DFF" />
+    <meta name="copyright" content="Iuri Silva 2021" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta
+      property="og:image"
+      content="https://iuricode.com/assets/image/preview.png"
+    />
+    <meta property="og:title" content="Portfólio // Iuri Silva" />
+    <meta property="og:description" content="Portfólio // Iuri Silva" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    
+    
+
+    
+    <link
+      rel="shortcut icon"
+      href="assets/image/logo-page.svg"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/image/logo-page.svg" />
+    <link rel="apple-touch-icon" href="assets/image/logo-page.svg" />
+    <link rel="canonical" href="https://iuricode.com/" />
+    <script src="assets/js/svg-inject.min.js"></script>
+    <title>Nikhil Bhalkar</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/style.css'%}"/>
+  </head>
+
+  <body>
+    <header>
+      {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>{{ message }} </strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+         {% endfor %}
+      <div class="grid-layout">
+        <nav>
+           
+          <img
+          
+            src= "{% static 'assets/image/logo-iuricode.png'%}"
+            alt="iuricode"
+            width="200px"
+            height="25px"
+          />
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+         
+          <ul class="nav-list">
+            <li><a href="{% url 'mainhome' %}">Home</a></li>
+            <li><a href="{% url 'findteacher' %}">Find Info</a></li>
+            <li><a href="{% url 'findcourse' %}">Find Course</a></li>
+            <li>
+              <a href="{% url 'indexprofile' %}">Dashboard</a>
+            </li>
+            <li>
+              <a href="{% url 'findvideo' %}">Find Mentor</a>
+            </li>
+            <li>
+              <a  href="{% url 'logout' %}">Logout</a>
+            </li>
+          </ul>
+          
+          
+        </nav>
+        
+      </div>
+    </header>
+
+    <main>
+      <section id="s-home">
+        <div class="grid-layout">
+          <div id="home">
+            <div id="home-container-text">
+              <h1 class="delayMediumReveal">
+                <span>Personalized</span> , Embedded Learning and <span>Adaptive Learning</span>  For Career Developement
+                 
+              </h1>
+              <p class="typewriter">
+                
+              </p>
+
+              <a
+                href="https://www.instagram.com/iuricode/"
+                rel="noopener"
+                target="_blank"
+                class="delayExtraBigReveal"
+              >
+                Let's Go
+              </a>
+            </div>
+
+            <img
+              src="{% static 'assets/image/logo.png'%}"
+              alt="ìcone iuricode"
+              onload="SVGInject(this)"
+              id="logo"
+              width="500px"
+              height="500px"
+            />
+          </div>
+        </div>
+      </section>
+
+      
+
+      <footer>
+        <div class="grid-layout">
+          <p>
+            Copyright © 2023
+            <a href="https://iuricode.com" rel="noopener" target="_blank">
+              ShiftEnter.com.
+            </a>
+            This website is created by team ShiftEnter
+          </p>
+
+          <div>
+            <p>Powered by</p>
+            <img
+              src="assets/image/logo.png"
+              alt="Logo iuricode"
+         
+            />
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

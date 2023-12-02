@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Iuri Silva" />
+    <meta
+      name="description"
+      content="Meu nome é Iuri, desenvolvo interfaces modernas e de alta qualidade, concentrado em performance, animações, responsividade e SEO."
+    />
+    <meta
+      name="keywords"
+      content="sites, web, desenvolvimento, frontend, iuri silva, ui designer, programador, iuricode, front-end, designer, ui, iuri, freelancer, freela, website, portfólio"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#986DFF" />
+    <meta name="copyright" content="Iuri Silva 2021" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta
+      property="og:image"
+      content="https://iuricode.com/assets/image/preview.png"
+    />
+    <meta property="og:title" content="Portfólio // Iuri Silva" />
+    <meta property="og:description" content="Portfólio // Iuri Silva" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/image/logo-page.svg"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/image/logo-page.svg" />
+    <link rel="apple-touch-icon" href="assets/image/logo-page.svg" />
+    <link rel="canonical" href="https://iuricode.com/" />
+    <script src="assets/js/svg-inject.min.js"></script>
+    <title>Nikhil Bhalkar</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/style.css'%}"/>
+  </head>
+
+  <body>
+    <header>
+      <div class="grid-layout">
+        <nav>
+           
+          <img
+          
+            src= "{% static 'assets/image/logo-iuricode.png'%}"
+            alt="iuricode"
+            width="200px"
+            height="25px"
+          />
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+         
+          <ul class="nav-list">
+            <li><a href="{% url 'mainhome' %}">Home</a></li>
+            <li><a href="{% url 'findteacher' %}">Find Info</a></li>
+            <li><a href="{% url 'findcourse' %}">Find Course</a></li>
+            <li>
+              <a href="{% url 'indexprofile' %}">Dashboard</a>
+            </li>
+            <li>
+              <a href="{% url 'findvideo' %}">Find Mentor</a>
+            </li>
+            <li>
+              <a  href="{% url 'logout' %}">Logout</a>
+            </li>
+          </ul>
+          
+          
+        </nav>
+      </div>
+    </header>
+
+    <main>
+     
+
+      <section id="s-services">
+        <div class="grid-layout">
+          <h2 class="delaySmallReveal"> <span></span></h2>
+
+          <div class="SearchBox">
+            <form action="/findcourse" method="post">
+              {% csrf_token %}
+  
+              <input type="text" name="searchcourse" id="searchcourse" class="SearchBox-input" placeholder="SEARCH Course HERE..!">
+          
+              <button class="SearchBox-button" type="submit">
+                  <i class="SearchBox-icon  material-icons">search</i>
+              </button>
+             </form>
+            
+        </div>
+        <h2 class="delaySmallReveal"> <span></span></h2>
+
+          <div id="services">
+            <article class="intervalCardReveal" style="width: 200px;">
+              <div >
+                <div >
+                  <iframe width="300" height="180" src="{{link1}}" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div style="height: 50px;"></div><br><br> <br><br>
+              <h3>{{ title1 }}</h3>
+             
+            </article>
+
+            <article class="intervalCardReveal" style="width: 200px;">
+              <div >
+                <div >
+                  <iframe width="300" height="180" src="{{link2}}" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div style="height: 50px;"></div><br><br> <br><br>
+              <h3>{{title2}}r</h3>
+             
+            </article>
+            <article class="intervalCardReveal" style="width: 200px;">
+              <div >
+                <div >
+                  <iframe width="300" height="180" src="{{link3}}" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div style="height: 50px;"></div><br><br> <br><br>
+              <h3>{{title3}}</h3>
+             
+            </article>
+          </div>
+        </div>
+      </section>
+
+     
+      <footer>
+        <div class="grid-layout">
+          <p>
+            Copyright © 2023
+            <a href="https://iuricode.com" rel="noopener" target="_blank">
+              ShiftEnter.com.
+            </a>
+            This website is created by team ShiftEnter
+          </p>
+
+          <div>
+            <p>Powered by</p>
+            <img
+            src="{% static 'assets/image/logo.png'%}"
+              alt="Logo iuricode"
+         
+            />
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

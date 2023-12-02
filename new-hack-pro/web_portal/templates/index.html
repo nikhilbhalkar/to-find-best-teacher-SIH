@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nikhilh</title>
+  {% load static %}
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="{% static './assetspro/images/logo.ico'%}" type="image/x-icon">
+  
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="{% static './assetspro/css/style.css'%}">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+  
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+    
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        
+
+        <div class="info-content">
+          <h1 class="name" title="">{{request.user}}</h1>
+
+          
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:richard@example.com" class="contact-link">{{request.user.email}} </a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">{{user_profile.email}}</p>
+
+              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1982-06-23">June 23, 1982</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Sacramento, California, USA</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+     <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a class="navbar-link  active" href="{% url 'mainhome' %}">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" href="{% url 'findteacher' %}">Find Info</a>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" href="{% url 'findcourse' %}">Find Cource</a>
+          </li>
+
+          <li class="navbar-item">
+            <a class="navbar-link" href="{% url 'indexprofile' %}">Dashboard</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="{% url 'findvideo' %}">Fond Mentor</a>
+          </li>
+          
+
+         
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+           
+
+           
+            
+          </p>
+         
+
+          <p>
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quia cumque quis dolorem illo? Quo, beatae culpa impedit libero fugiat voluptas error in ab iste adipisci dignissimos accusantium, assumenda nisi laudantium debitis magnam accusamus. Iste labore eligendi vitae saepe quaerat perspiciatis doloribus deserunt dicta repudiandae. Cumque amet similique error commodi?
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+             
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">{{ user_profile.interest }}</h4>
+
+                <p class="service-item-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, sint.
+
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+            
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Level : {{ user_profile.level }}</h4>
+
+                <p class="service-item-text">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, exercitationem!
+                </p>
+              </div>
+
+            </li>
+
+           
+          </ul>
+
+        </section>
+
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title"> Update Info</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" value="Emter the interest : {{ user_profile.interest }}" class="form-input" placeholder="Emter the interest" required data-form-input>
+
+              <input type="email" name="email" value="Emter the interest: {{ user_profile.level }}" class="form-input" placeholder=" Enter the level" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input"  placeholder="My Info" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Update</span>
+            </button>
+
+          </form>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+          
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
